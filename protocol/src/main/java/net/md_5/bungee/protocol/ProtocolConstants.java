@@ -7,14 +7,6 @@ public class ProtocolConstants
 {
 
     private static final boolean SNAPSHOT_SUPPORT = Boolean.getBoolean( "net.md_5.bungee.protocol.snapshot" );
-    public static final int MINECRAFT_1_8 = 47;
-    public static final int MINECRAFT_1_9 = 107;
-    public static final int MINECRAFT_1_9_1 = 108;
-    public static final int MINECRAFT_1_9_2 = 109;
-    public static final int MINECRAFT_1_9_4 = 110;
-    public static final int MINECRAFT_1_10 = 210;
-    public static final int MINECRAFT_1_11 = 315;
-    public static final int MINECRAFT_1_11_1 = 316;
     public static final int MINECRAFT_1_12 = 335;
     public static final int MINECRAFT_1_12_1 = 338;
     public static final int MINECRAFT_1_12_2 = 340;
@@ -47,10 +39,6 @@ public class ProtocolConstants
     static
     {
         ImmutableList.Builder<String> supportedVersions = ImmutableList.<String>builder().add(
-                "1.8.x",
-                "1.9.x",
-                "1.10.x",
-                "1.11.x",
                 "1.12.x",
                 "1.13.x",
                 "1.14.x",
@@ -61,14 +49,6 @@ public class ProtocolConstants
                 "1.19.x"
         );
         ImmutableList.Builder<Integer> supportedVersionIds = ImmutableList.<Integer>builder().add(
-                ProtocolConstants.MINECRAFT_1_8,
-                ProtocolConstants.MINECRAFT_1_9,
-                ProtocolConstants.MINECRAFT_1_9_1,
-                ProtocolConstants.MINECRAFT_1_9_2,
-                ProtocolConstants.MINECRAFT_1_9_4,
-                ProtocolConstants.MINECRAFT_1_10,
-                ProtocolConstants.MINECRAFT_1_11,
-                ProtocolConstants.MINECRAFT_1_11_1,
                 ProtocolConstants.MINECRAFT_1_12,
                 ProtocolConstants.MINECRAFT_1_12_1,
                 ProtocolConstants.MINECRAFT_1_12_2,
