@@ -544,7 +544,7 @@ public class BungeeCord extends ProxyServer
     @Override
     public String getVersion()
     {
-        return ("1.19.3 ~ 스냅샷");
+        return ("1.19.3 ~ Snapshot");
     }
 
     public final void reloadMessages()
