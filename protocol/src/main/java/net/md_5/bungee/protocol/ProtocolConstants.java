@@ -10,6 +10,7 @@ public class ProtocolConstants
     public static final int MINECRAFT_1_12 = 335;
     public static final int MINECRAFT_1_12_1 = 338;
     public static final int MINECRAFT_1_12_2 = 340;
+
     public static final int MINECRAFT_1_13 = 393;
     public static final int MINECRAFT_1_13_1 = 401;
     public static final int MINECRAFT_1_13_2 = 404;
