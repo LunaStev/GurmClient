@@ -22,15 +22,13 @@ public class BungeeTitle implements Title
     private TitlePacketHolder<ClearTitles> reset;
 
     @Data
-    private static class TitlePacketHolder<T extends DefinedPacket>
-    {
+    private static class TitlePacketHolder<T extends DefinedPacket> {
 
         private final net.md_5.bungee.protocol.packet.Title oldPacket;
         private final T newPacket;
     }
 
-    private static TitlePacketHolder<TitleTimes> createAnimationPacket()
-    {
+    private static TitlePacketHolder<TitleTimes> createAnimationPacket() {
         TitlePacketHolder<TitleTimes> title = new TitlePacketHolder<>( new net.md_5.bungee.protocol.packet.Title( Action.TIMES ), new TitleTimes() );
 
         title.oldPacket.setFadeIn( 20 );
@@ -45,10 +43,8 @@ public class BungeeTitle implements Title
     }
 
     @Override
-    public Title title(BaseComponent text)
-    {
-        if ( title == null )
-        {
+    public Title title(BaseComponent text) {
+        if ( title == null ) {
             net.md_5.bungee.protocol.packet.Title packet = new net.md_5.bungee.protocol.packet.Title( Action.TITLE );
             title = new TitlePacketHolder<>( packet, packet );
         }
@@ -58,10 +54,8 @@ public class BungeeTitle implements Title
     }
 
     @Override
-    public Title title(BaseComponent... text)
-    {
-        if ( title == null )
-        {
+    public Title title(BaseComponent... text) {
+        if ( title == null ) {
             net.md_5.bungee.protocol.packet.Title packet = new net.md_5.bungee.protocol.packet.Title( Action.TITLE );
             title = new TitlePacketHolder<>( packet, packet );
         }
@@ -71,8 +65,19 @@ public class BungeeTitle implements Title
     }
 
     @Override
-    public Title subTitle(BaseComponent text)
-    {
+    public Title subTitle(BaseComponent text) {
+        if ( subtitle == null ) {
+            subtitle = new TitlePacketHolder<>( new net.md_5.bungee.protocol.packet.Title( Action.SUBTITLE ), new Subtitle() );
+        }
+
+        String serialized = ComponentSerializer.toString( text );
+        subtitle.oldPacket.setText( serialized );
+        subtitle.newPacket.setText( serialized );
+        return this;
+    }
+
+    @Override
+    public Title subTitle(BaseComponent... text) {
         if ( subtitle == null )
         {
             subtitle = new TitlePacketHolder<>( new net.md_5.bungee.protocol.packet.Title( Action.SUBTITLE ), new Subtitle() );
@@ -85,22 +90,7 @@ public class BungeeTitle implements Title
     }
 
     @Override
-    public Title subTitle(BaseComponent... text)
-    {
-        if ( subtitle == null )
-        {
-            subtitle = new TitlePacketHolder<>( new net.md_5.bungee.protocol.packet.Title( Action.SUBTITLE ), new Subtitle() );
-        }
-
-        String serialized = ComponentSerializer.toString( text );
-        subtitle.oldPacket.setText( serialized );
-        subtitle.newPacket.setText( serialized );
-        return this;
-    }
-
-    @Override
-    public Title fadeIn(int ticks)
-    {
+    public Title fadeIn(int ticks) {
         if ( times == null )
         {
             times = createAnimationPacket();
