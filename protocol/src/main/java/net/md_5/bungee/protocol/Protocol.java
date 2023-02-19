@@ -62,7 +62,7 @@ public enum Protocol
             TO_SERVER.registerPacket(
                     Handshake.class,
                     Handshake::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
+                    map( ProtocolConstants.MINECRAFT_1_19_3, 0x00 )
             );
         }
     },
@@ -229,7 +229,6 @@ public enum Protocol
             TO_CLIENT.registerPacket(
                     Title.class,
                     Title::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x45 ),
                     map( ProtocolConstants.MINECRAFT_1_12, 0x47 ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x48 ),
                     map( ProtocolConstants.MINECRAFT_1_13, 0x4B ),
@@ -274,10 +273,6 @@ public enum Protocol
             TO_CLIENT.registerPacket(
                     PlayerListHeaderFooter.class,
                     PlayerListHeaderFooter::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x47 ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x48 ),
-                    map( ProtocolConstants.MINECRAFT_1_9_4, 0x47 ),
-                    map( ProtocolConstants.MINECRAFT_1_12, 0x49 ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x4A ),
                     map( ProtocolConstants.MINECRAFT_1_13, 0x4E ),
                     map( ProtocolConstants.MINECRAFT_1_14, 0x53 ),
@@ -292,8 +287,6 @@ public enum Protocol
             TO_CLIENT.registerPacket(
                     EntityStatus.class,
                     EntityStatus::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x1A ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x1B ),
                     map( ProtocolConstants.MINECRAFT_1_13, 0x1C ),
                     map( ProtocolConstants.MINECRAFT_1_14, 0x1B ),
                     map( ProtocolConstants.MINECRAFT_1_15, 0x1C ),
@@ -358,8 +351,6 @@ public enum Protocol
             TO_SERVER.registerPacket(
                     KeepAlive.class,
                     KeepAlive::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x0B ),
                     map( ProtocolConstants.MINECRAFT_1_12, 0x0C ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x0B ),
                     map( ProtocolConstants.MINECRAFT_1_13, 0x0E ),
@@ -372,8 +363,6 @@ public enum Protocol
             );
             TO_SERVER.registerPacket( Chat.class,
                     Chat::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x02 ),
                     map( ProtocolConstants.MINECRAFT_1_12, 0x03 ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x02 ),
                     map( ProtocolConstants.MINECRAFT_1_14, 0x03 ),
@@ -394,8 +383,6 @@ public enum Protocol
             TO_SERVER.registerPacket(
                     TabCompleteRequest.class,
                     TabCompleteRequest::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x14 ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x01 ),
                     map( ProtocolConstants.MINECRAFT_1_12, 0x02 ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x01 ),
                     map( ProtocolConstants.MINECRAFT_1_13, 0x05 ),
@@ -407,8 +394,6 @@ public enum Protocol
             TO_SERVER.registerPacket(
                     ClientSettings.class,
                     ClientSettings::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x15 ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x04 ),
                     map( ProtocolConstants.MINECRAFT_1_12, 0x05 ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x04 ),
                     map( ProtocolConstants.MINECRAFT_1_14, 0x05 ),
@@ -419,8 +404,6 @@ public enum Protocol
             TO_SERVER.registerPacket(
                     PluginMessage.class,
                     PluginMessage::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x17 ),
-                    map( ProtocolConstants.MINECRAFT_1_9, 0x09 ),
                     map( ProtocolConstants.MINECRAFT_1_12, 0x0A ),
                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x09 ),
                     map( ProtocolConstants.MINECRAFT_1_13, 0x0A ),
@@ -440,23 +423,23 @@ public enum Protocol
             TO_CLIENT.registerPacket(
                     StatusResponse.class,
                     StatusResponse::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
+                    map( ProtocolConstants.MINECRAFT_1_19_3, 0x00 )
             );
             TO_CLIENT.registerPacket(
                     PingPacket.class,
                     PingPacket::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
+                    map( ProtocolConstants.MINECRAFT_1_19_3, 0x01 )
             );
 
             TO_SERVER.registerPacket(
                     StatusRequest.class,
                     StatusRequest::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
+                    map( ProtocolConstants.MINECRAFT_1_19_3, 0x00 )
             );
             TO_SERVER.registerPacket(
                     PingPacket.class,
                     PingPacket::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
+                    map( ProtocolConstants.MINECRAFT_1_19_3, 0x01 )
             );
         }
     },
@@ -468,22 +451,22 @@ public enum Protocol
             TO_CLIENT.registerPacket(
                     Kick.class,
                     Kick::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
+                    map( ProtocolConstants.MINECRAFT_1_12, 0x00 )
             );
             TO_CLIENT.registerPacket(
                     EncryptionRequest.class,
                     EncryptionRequest::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
+                    map( ProtocolConstants.MINECRAFT_1_12, 0x01 )
             );
             TO_CLIENT.registerPacket(
                     LoginSuccess.class,
                     LoginSuccess::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x02 )
+                    map( ProtocolConstants.MINECRAFT_1_12, 0x02 )
             );
             TO_CLIENT.registerPacket(
                     SetCompression.class,
                     SetCompression::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x03 )
+                    map( ProtocolConstants.MINECRAFT_1_12, 0x03 )
             );
             TO_CLIENT.registerPacket(
                     LoginPayloadRequest.class,
@@ -494,12 +477,12 @@ public enum Protocol
             TO_SERVER.registerPacket(
                     LoginRequest.class,
                     LoginRequest::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
+                    map( ProtocolConstants.MINECRAFT_1_12, 0x00 )
             );
             TO_SERVER.registerPacket(
                     EncryptionResponse.class,
                     EncryptionResponse::new,
-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
+                    map( ProtocolConstants.MINECRAFT_1_12, 0x01 )
             );
             TO_SERVER.registerPacket(
                     LoginPayloadResponse.class,
