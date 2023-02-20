@@ -45,7 +45,7 @@ public class TabCompleteRequest extends DefinedPacket
 
         if ( protocolVersion < ProtocolConstants.MINECRAFT_1_13 )
         {
-            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
             {
                 assumeCommand = buf.readBoolean();
             }
@@ -68,7 +68,7 @@ public class TabCompleteRequest extends DefinedPacket
 
         if ( protocolVersion < ProtocolConstants.MINECRAFT_1_13 )
         {
-            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
             {
                 buf.writeBoolean( assumeCommand );
             }

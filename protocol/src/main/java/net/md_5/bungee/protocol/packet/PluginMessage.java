@@ -28,13 +28,13 @@ public class PluginMessage extends DefinedPacket
         public String apply(String tag)
         {
             // Transform as per Bukkit
-            if ( tag.equals( "BungeeCord" ) )
+            if ( tag.equals( "GurmClient" ) )
             {
-                return "bungeecord:main";
+                return "gurmclient:main";
             }
-            if ( tag.equals( "bungeecord:main" ) )
+            if ( tag.equals( "gurmclient:main" ) )
             {
-                return "BungeeCord";
+                return "GurmClient";
             }
 
             // Code that gets to here is UNLIKELY to be viable on the Bukkit side of side things,

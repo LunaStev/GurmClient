@@ -31,10 +31,10 @@ public class ClientSettings extends DefinedPacket
     {
         locale = readString( buf, 16 );
         viewDistance = buf.readByte();
-        chatFlags = protocolVersion >= ProtocolConstants.MINECRAFT_1_9 ? DefinedPacket.readVarInt( buf ) : buf.readUnsignedByte();
+        chatFlags = protocolVersion >= ProtocolConstants.MINECRAFT_1_12 ? DefinedPacket.readVarInt( buf ) : buf.readUnsignedByte();
         chatColours = buf.readBoolean();
         skinParts = buf.readByte();
-        if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+        if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
         {
             mainHand = DefinedPacket.readVarInt( buf );
         }
@@ -53,7 +53,7 @@ public class ClientSettings extends DefinedPacket
     {
         writeString( locale, buf );
         buf.writeByte( viewDistance );
-        if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+        if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
         {
             DefinedPacket.writeVarInt( chatFlags, buf );
         } else
@@ -62,7 +62,7 @@ public class ClientSettings extends DefinedPacket
         }
         buf.writeBoolean( chatColours );
         buf.writeByte( skinParts );
-        if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+        if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
         {
             DefinedPacket.writeVarInt( mainHand, buf );
         }

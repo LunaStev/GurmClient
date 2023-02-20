@@ -56,7 +56,7 @@ public class Team extends DefinedPacket
             }
             friendlyFire = buf.readByte();
             nameTagVisibility = readString( buf );
-            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
             {
                 collisionRule = readString( buf );
             }
@@ -93,7 +93,7 @@ public class Team extends DefinedPacket
             }
             buf.writeByte( friendlyFire );
             writeString( nameTagVisibility, buf );
-            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
+            if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12 )
             {
                 writeString( collisionRule, buf );
             }
